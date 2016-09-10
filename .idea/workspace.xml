@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="100ea1ae-d0cd-481c-9d72-21187054db0f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/event.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/execution.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/settings.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/strategy.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/streaming.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/trading.py" />
-    </list>
+    <list default="true" id="100ea1ae-d0cd-481c-9d72-21187054db0f" name="Default" comment="" />
     <ignored path="oandaPietro.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -208,6 +200,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="&lt; Python 2.7.12 (C:\Python27\python.exe) (1) &gt;" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oandaPietro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="oandaPietro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
