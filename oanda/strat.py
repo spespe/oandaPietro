@@ -1,10 +1,10 @@
 __author__ = 'Spe'
 
-# required datetime functions
 from datetime import datetime, timedelta
-import data.access
+import oanda.data.access
 import oandapy
 import pandas as pd
+
 
 class ForexSystem(oandapy.Streamer):
     def __init__(self, *args, **kwargs):
@@ -28,47 +28,54 @@ class ForexSystem(oandapy.Streamer):
         self.position = 0
         self.dt_format = "%Y-%m-%dT%H:%M:%S.%fZ"
 
-def begin(self, **params):
-    self.instrument = params["instruments"]
-    self.account_id = params["accountId"]
-    self.qty = params["qty"]
-    self.resample_interval = params["resample_interval"]
-    self.mean_period_short = params["mean_period_short"]
-    self.mean_period_long = params["mean_period_long"]
-    self.buy_threshold = params["buy_threshold"]
-    self.sell_threshold = params["sell_threshold"]
-    # Start streaming prices
-    self.start(**params)
+    def begin(self, **params):
+        self.instrument = params["instruments"]
+        self.account_id = params["accountId"]
+        self.qty = params["qty"]
+        self.resample_interval = params["resample_interval"]
+        self.mean_period_short = params["mean_period_short"]
+        self.mean_period_long = params["mean_period_long"]
+        self.buy_threshold = params["buy_threshold"]
+        self.sell_threshold = params["sell_threshold"]
+        # Start streaming prices
+        self.start(**params)
 
-def on_success(self, data):
-    time, symbol, bid, ask = self.parse_tick_data(data["tick"])
-    self.tick_event(time, symbol, bid, ask)
+    def on_success(self, data):
+        time, symbol, bid, ask = self.parse_tick_data(data["tick"])
+        self.tick_event(time, symbol, bid, ask)
 
-def tick_event(self, time, symbol, bid, ask):
-    midprice = (ask+bid)/2.
-    self.prices.loc[time, symbol] = midprice
-    resampled_prices = self.prices.resample(self.resample_interval, how='last', fill_method="ffill")
-    mean_short = resampled_prices.tail(self.mean_period_short).mean()[0]
-    mean_long = resampled_prices.tail(self.mean_period_long).mean()[0]
-    self.beta = mean_short / mean_long
-    self.perform_trade_logic(self.beta)
-    self.calculate_unrealized_pnl(bid, ask)
-    self.print_status()
+    def tick_event(self, time, symbol, bid, ask):
+        midprice = (ask+bid)/2.
+        self.prices.loc[time, symbol] = midprice
+        resampled_prices = self.prices.resample(self.resample_interval, how='last', fill_method="ffill")
+        mean_short = resampled_prices.tail(self.mean_period_short).mean()[0]
+        mean_long = resampled_prices.tail(self.mean_period_long).mean()[0]
+        self.beta = mean_short / mean_long
+        self.perform_trade_logic(self.beta)
+        #self.calculate_unrealized_pnl(bid, ask)
+        self.print_status()
 
-def perform_trade_logic(self, beta):
-    if beta > self.buy_threshold:
-        if not self.is_position_opened or self.position < 0:
-            self.check_and_send_order(True)
-    elif beta < self.sell_threshold:
-        if not self.is_position_opened or self.position > 0:
-            self.check_and_send_order(False)
+    def perform_trade_logic(self, beta):
+        if beta > self.buy_threshold:
+            if not self.is_position_opened or self.position < 0:
+                self.check_and_send_order(True)
+        elif beta < self.sell_threshold:
+            if not self.is_position_opened or self.position > 0:
+                self.check_and_send_order(False)
 
-def print_status(self):
-    print "[%s] %s pos=%s beta=%s RPnL=%s UPnL=%s" % (
-        datetime.now().time(),
-        self.instrument,
-        self.position,
-        round(self.beta, 5),
-        self.realized_pnl,
-        self.unrealized_pnl)
+    def print_status(self):
+        print "[%s] %s pos=%s beta=%s RPnL=%s UPnL=%s" % (
+            datetime.now().time(),
+            self.instrument,
+            self.position,
+            round(self.beta, 5),
+            self.realized_pnl,
+            self.unrealized_pnl)
+
+
+if __name__ == "__main__":
+    system = ForexSystem(environment="practice", access_token=oanda.data.access.key)
+    system.begin(accountId=oanda.data.access.account_id, instruments="EUR_USD", qty=1000, resample_interval="10s",
+                 mean_period_short=5, mean_period_long=20, buy_threshold=1., sell_threshold=1.)
+
 
