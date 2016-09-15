@@ -6,10 +6,10 @@ import oandapy
 import pandas as pd
 
 
-class ForexSystem(oandapy.Streamer):
+class PietroSystem(oandapy.Streamer):
     def __init__(self, *args, **kwargs):
         oandapy.Streamer.__init__(self, *args, **kwargs)
-        self.oanda = oandapy.API(kwargs["environment"], kwargs["access_token"])
+        self.access = oandapy.API(kwargs["environment"], kwargs["access_token"])
         self.instrument = None
         self.account_id = None
         self.qty = 0
@@ -19,6 +19,8 @@ class ForexSystem(oandapy.Streamer):
         self.buy_threshold = 1.0
         self.sell_threshold = 1.0
         self.prices = pd.DataFrame()
+        self.stop_loss = 40
+        self.trailing_stop = 40
         self.beta = 0
         self.is_position_opened = False
         self.opening_price = 0
@@ -40,9 +42,10 @@ class ForexSystem(oandapy.Streamer):
         # Start streaming prices
         self.start(**params)
 
-    def on_success(self, data):
-        time, symbol, bid, ask = self.parse_tick_data(data["tick"])
-        self.tick_event(time, symbol, bid, ask)
+    #Need to override the on_success
+    #def on_success(self, data):
+    #    time, symbol, bid, ask = self.parse_tick_data(data["tick"])
+    #    self.tick_event(time, symbol, bid, ask)
 
     def tick_event(self, time, symbol, bid, ask):
         midprice = (ask+bid)/2.
@@ -52,16 +55,19 @@ class ForexSystem(oandapy.Streamer):
         mean_long = resampled_prices.tail(self.mean_period_long).mean()[0]
         self.beta = mean_short / mean_long
         self.perform_trade_logic(self.beta)
-        #self.calculate_unrealized_pnl(bid, ask)
         self.print_status()
 
     def perform_trade_logic(self, beta):
         if beta > self.buy_threshold:
             if not self.is_position_opened or self.position < 0:
-                self.check_and_send_order(True)
+                #Adding check_and send_order method
+                #self.check_and_send_order(True)
+                print("check and sent order")
         elif beta < self.sell_threshold:
             if not self.is_position_opened or self.position > 0:
-                self.check_and_send_order(False)
+                #Adding check_and send_order method
+                #self.check_and_send_order(False)
+                print("check and sent order")
 
     def print_status(self):
         print "[%s] %s pos=%s beta=%s RPnL=%s UPnL=%s" % (
@@ -73,8 +79,12 @@ class ForexSystem(oandapy.Streamer):
             self.unrealized_pnl)
 
 
+
+
+
+#Change the main to include new changes
 if __name__ == "__main__":
-    system = ForexSystem(environment="practice", access_token=oanda.data.access.key)
+    system = PietroSystem(environment="practice", access_token=oanda.data.access.key)
     system.begin(accountId=oanda.data.access.account_id, instruments="EUR_USD", qty=1000, resample_interval="10s",
                  mean_period_short=5, mean_period_long=20, buy_threshold=1., sell_threshold=1.)
 
