@@ -7,8 +7,13 @@ class CurrentPrice:
     """Class created to obtain information on the current prices"""
     def __init__(self, oanda, response):
         self.oanda = oanda
-        self.response = response
+        self.response = self.get_response()
         self.prices = response["prices"]
+        self.ask_price = self.get_ask_price()
+        self.bid_price = self.get_bid_price()
+        self.spread = self.get_spread()
+        self.instrument = self.get_instrument()
+        self.time = self.get_time()
 
     def get_response(self):
         return response
@@ -38,10 +43,9 @@ oanda = oandapy.API(environment="practice", access_token=data.access.key)
 response = oanda.get_prices(instruments="EUR_USD")
 current = CurrentPrice(oanda, response)
 
-print(current.get_response())
-print(current.get_bid_price())
-print(current.get_ask_price())
-print(current.get_spread())
-print(current.get_instrument())
-print(current.get_time())
-
+print(current.response)
+print(current.bid_price)
+print(current.ask_price)
+print(current.spread)
+print(current.instrument)
+print(current.time)
