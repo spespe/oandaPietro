@@ -22,7 +22,7 @@ class CurrentPrice:
         return ask_price
 
     def get_spread(self):
-        spread = abs(self.get_ask_price() - self.get_bid_price())
+        spread = self.get_ask_price() - self.get_bid_price()
         return spread
 
     def get_instrument(self):
