@@ -43,9 +43,9 @@ class PietroSystem(oandapy.Streamer):
         self.start(**params)
 
     #Need to override the on_success
-    #def on_success(self, data):
-    #    time, symbol, bid, ask = self.parse_tick_data(data["tick"])
-    #    self.tick_event(time, symbol, bid, ask)
+    def on_success(self, data):
+        time, symbol, bid, ask = self.parse_tick_data(data["tick"])
+        self.tick_event(time, symbol, bid, ask)
 
     def tick_event(self, time, symbol, bid, ask):
         midprice = (ask+bid)/2.
