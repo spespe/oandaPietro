@@ -8,8 +8,10 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/execution.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/settings.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/strategy.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda/streaming.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/streaming.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/trading.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oanda/infoRealTime.py" afterPath="$PROJECT_DIR$/oanda/infoRealTime.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="oandaPietro.iws" />
@@ -43,11 +45,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infoRealTime.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="infoRealTime.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oanda/infoRealTime.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0102739725">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="18" />
+              <folding>
+                <element signature="e#20#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="streaming.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oanda/streaming.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8150685">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="e#20#34#0" expanded="true" />
               </folding>
@@ -89,10 +103,13 @@
         <option value="$PROJECT_DIR$/oanda2/strategy.py" />
         <option value="$PROJECT_DIR$/oanda2/execution.py" />
         <option value="$PROJECT_DIR$/oanda2/trading.py" />
-        <option value="$PROJECT_DIR$/oanda/data/access.py" />
         <option value="$PROJECT_DIR$/oanda/main.py" />
         <option value="$PROJECT_DIR$/oanda/strat.py" />
         <option value="$PROJECT_DIR$/oanda/test.py" />
+        <option value="$PROJECT_DIR$/oanda/Renee.py" />
+        <option value="$PROJECT_DIR$/oanda/infoRealTime.py" />
+        <option value="$PROJECT_DIR$/oanda/data/access.py" />
+        <option value="$PROJECT_DIR$/oanda/streaming.py" />
       </list>
     </option>
   </component>
@@ -175,12 +192,28 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/oanda/test.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/oanda/infoRealTime.py" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="157" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="156" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="157" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="831" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="160" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="159" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="160" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="835" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -322,7 +355,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="oandaPietro" />
-      <option name="SCRIPT_NAME" value="C:\Users\Spe\PycharmProjects\oandaPietro\oanda\infoRealTime.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/oanda/infoRealTime.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -372,7 +405,31 @@
       <option name="project" value="LOCAL" />
       <updated>1474209109093</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added real time info prices">
+      <created>1474209152933</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1474209152933</updated>
+    </task>
+    <task id="LOCAL-00007" summary="removed abs">
+      <created>1474212889904</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1474212889904</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Changed CurrentPrice class">
+      <created>1474219978308</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1474219978308</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Removed oanda as input for CurentPrices class">
+      <created>1474220529836</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1474220529837</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -415,7 +472,11 @@
     <MESSAGE value="Added main" />
     <MESSAGE value="Added some variables and in future need to override the OnSuccess adding a parse data method and a send order method. Adding stop_loss and trailing_stop" />
     <MESSAGE value="Adding first draft for streaming to modify" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding first draft for streaming to modify" />
+    <MESSAGE value="Added real time info prices" />
+    <MESSAGE value="removed abs" />
+    <MESSAGE value="Changed CurrentPrice class" />
+    <MESSAGE value="Removed oanda as input for CurentPrices class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed oanda as input for CurentPrices class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -561,6 +622,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/oanda/strat.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -571,26 +640,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gitignore">
+    <entry file="file://$PROJECT_DIR$/oanda/infoRealTime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="18" />
+          <folding>
+            <element signature="e#20#34#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/oanda/data/access.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.11643836">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oanda/infoRealTime.py">
+    <entry file="file://$PROJECT_DIR$/oanda/streaming.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0102739725">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        <state vertical-scroll-proportion="0.8150685">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#20#34#0" expanded="true" />
           </folding>

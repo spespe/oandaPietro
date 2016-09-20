@@ -6,16 +6,13 @@ import data.access
 class CurrentPrice:
     """Class created to obtain information on the current prices"""
     def __init__(self, response):
-        self.response = self.get_response()
+        self.response = response
         self.prices = response["prices"]
         self.ask_price = self.get_ask_price()
         self.bid_price = self.get_bid_price()
         self.spread = self.get_spread()
         self.instrument = self.get_instrument()
         self.time = self.get_time()
-
-    def get_response(self):
-        return response
 
     def get_bid_price(self):
         bid_price = float(self.prices[0]["bid"])
