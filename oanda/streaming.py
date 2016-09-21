@@ -3,6 +3,7 @@ __author__ = 'Spe'
 import oandapy
 import data.access
 import requests
+import json
 
 class streaming:
     """This class is created to stream prices from oanda in realtime"""
@@ -21,8 +22,12 @@ class streaming:
             req = requests.Request('GET', url, headers=headers, params=params)
             pre = req.prepare()
             resp = session.send(pre, stream=True, verify=False)
+            print resp
             return resp
         except Exception as ex:
             print("Exception found while connecting to oanda. "+str(ex))
             self.session.close()
 
+
+stream = streaming("EUR_USD")
+stream.connect()
