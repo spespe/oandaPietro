@@ -13,6 +13,7 @@ class CurrentPrice:
         self.spread = self.get_spread()
         self.instrument = self.get_instrument()
         self.time = self.get_time()
+        self.status = self.get_status()
 
     def get_bid_price(self):
         bid_price = float(self.prices[0]["bid"])
@@ -34,6 +35,10 @@ class CurrentPrice:
         time = self.prices[0]["time"]
         return time
 
+    def get_status(self):
+        status = self.prices[0]["status"]
+        return status
+
 
 oanda = oandapy.API(environment="practice", access_token=data.access.key)
 response = oanda.get_prices(instruments="EUR_USD")
@@ -45,3 +50,4 @@ print(current.ask_price)
 print(current.spread)
 print(current.instrument)
 print(current.time)
+print(current.status)
