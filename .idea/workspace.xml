@@ -6,13 +6,12 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda/data/access.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/event.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/execution.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda/marketRequest.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/settings.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/strategy.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/streaming.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda/streaming2.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/trading.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oanda/infoRealTime.py" afterPath="$PROJECT_DIR$/oanda/infoRealTime.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/oanda/streaming.py" afterPath="$PROJECT_DIR$/oanda/streaming.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="oandaPietro.iws" />
@@ -46,13 +45,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infoRealTime.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="infoRealTime.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/oanda/infoRealTime.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8253425">
+            <state vertical-scroll-proportion="0.0">
               <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#20#34#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="marketRequest.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/oanda/marketRequest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="1.3681507">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <element signature="e#21#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,6 +133,7 @@
         <option value="$PROJECT_DIR$/oanda/streaming2.py" />
         <option value="$PROJECT_DIR$/oanda/data/access.py" />
         <option value="$PROJECT_DIR$/oanda/infoRealTime.py" />
+        <option value="$PROJECT_DIR$/oanda/marketRequest.py" />
       </list>
     </option>
   </component>
@@ -483,7 +495,13 @@
       <option name="project" value="LOCAL" />
       <updated>1474527897311</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added current status of the prices in real time">
+      <created>1474726874024</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1474726874024</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -533,7 +551,8 @@
     <MESSAGE value="Created streaming connection" />
     <MESSAGE value="Added connection for streaming" />
     <MESSAGE value="Adding first draft for streaming to modify" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding first draft for streaming to modify" />
+    <MESSAGE value="Added current status of the prices in real time" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added current status of the prices in real time" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -707,16 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/oanda/streaming.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="47" />
-          <folding>
-            <element signature="e#20#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/oanda/data/access.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -727,10 +736,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/oanda/infoRealTime.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8253425">
+        <state vertical-scroll-proportion="0.0">
           <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="e#20#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oanda/streaming.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="47" />
+          <folding>
+            <element signature="e#20#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/oanda/marketRequest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3681507">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#21#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
