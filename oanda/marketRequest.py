@@ -1,6 +1,5 @@
 __author__ = 'Spe'
 
-
 import json
 import requests
 import exceptions
