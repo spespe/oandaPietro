@@ -4,7 +4,6 @@
     <list default="true" id="100ea1ae-d0cd-481c-9d72-21187054db0f" name="Default" comment="Adding first draft for streaming to modify">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/__init__.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda/data/access.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/event.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/execution.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/settings.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oanda2/strategy.py" />
@@ -500,7 +499,13 @@
       <option name="project" value="LOCAL" />
       <updated>1475436845441</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Adding first draft for events to modify">
+      <created>1475479306694</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1475479306694</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -553,7 +558,8 @@
     <MESSAGE value="Added marketRequest python file (to modify)" />
     <MESSAGE value="Adding first draft for streaming to modify" />
     <MESSAGE value="Adding first draft for trading to modify" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding first draft for trading to modify" />
+    <MESSAGE value="Adding first draft for events to modify" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding first draft for events to modify" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
